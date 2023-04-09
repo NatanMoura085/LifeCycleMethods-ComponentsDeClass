@@ -1,7 +1,17 @@
 import { Component } from 'react';
 import './App.css';
 import { PostCard } from './components/PostCard';
+import Button from './components/Button/Button';
 
+const buttonStyle = {
+  backgroundColor: 'blue',
+  color: 'white',
+  fontSize: '1.2rem',
+  padding: '0.5rem 1rem',
+  borderRadius: '5px',
+  border: 'none',
+  cursor: 'pointer',
+};
 class App extends Component {
   state = {
     posts: []
@@ -26,6 +36,7 @@ class App extends Component {
 
     this.setState({ posts: postsAndPhotos });
   }
+  
 
   render() {
     const { posts } = this.state;
@@ -33,6 +44,7 @@ class App extends Component {
     return (
       
       <section className="container">
+  <Button text="Env" />
         <div className="posts">
           {posts.map(post => (
             <PostCard 
@@ -44,6 +56,7 @@ class App extends Component {
             />
           ))}
         </div>
+       
       </section>
     );
   }
